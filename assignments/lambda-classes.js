@@ -27,6 +27,21 @@ class Instructor extends Person {
     grade(student, subject) {
         console.log(`${student.name} receives a perfect score on ${subject}`);
     }
+
+    changeGrade(student) {
+        let addOrSubstract = Math.random();
+        if (addOrSubstract < 0.5) {
+            let addValue = Math.ceil(Math.random() * 10);
+            student.grade += addValue;
+            if (student.grade > 100) student.grade = 100;
+            return `${student.name}'s grade has been augmented by ${addValue} and is now ${student.grade}`;
+        } else {
+            let subtractValue = Math.ceil(Math.random() * 10);
+            student.grade -= subtractValue;
+            if (student.grade < 0) student.grade = 0;
+            return `${student.name}'s grade has been reduced by ${subtractValue} and is now ${student.grade}`;
+        }
+    }
 }
 
 class Student extends Person {
@@ -35,6 +50,7 @@ class Student extends Person {
         this.previousBackground = sAtts.previousBackground;
         this.className = sAtts.className;
         this.favSubjects = sAtts.favSubjects;
+        this.grade = sAtts.grade;
     }
 
     listsSubjects() {
@@ -95,7 +111,8 @@ const jonathan = new Student({
     gender: 'male',
     previousBackground: 'Entrepreneur',
     className: 'WEB19',
-    favSubjects: ["HTML", "CSS", "Crypto"]
+    favSubjects: ["HTML", "CSS", "Crypto"],
+    grade: 90
 });
 
 const elisa = new Student({
@@ -105,7 +122,8 @@ const elisa = new Student({
     gender: 'female',
     previousBackground: 'Beauty Specialist',
     className: 'WEB19',
-    favSubjects: ["HTML", "CSS", "Javascript"]
+    favSubjects: ["HTML", "CSS", "Javascript"],
+    grade: 70
 });
 
 const sam = new ProjectManager({
@@ -131,3 +149,16 @@ const luna = new ProjectManager({
     gradClassName: "WEB4",
     favInstructor: "Adam"
 });
+
+josh.speak();
+luna.speak();
+
+jonathan.listsSubjects();
+jonathan.sprintChallenge("Bitcoin");
+
+luna.debugsCode(jonathan, "Bitcoin");
+
+console.log(josh.changeGrade(jonathan));
+console.log(josh.changeGrade(jonathan));
+console.log(josh.changeGrade(jonathan));
+console.log(josh.changeGrade(jonathan));
