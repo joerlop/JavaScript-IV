@@ -67,3 +67,67 @@ class ProjectManager extends Instructor {
         console.log(`${this.name} debugs ${student.name}'s code on ${subject}`);
     }
 }
+
+const josh = new Instructor({
+    name: 'Josh',
+    location: 'Utah',
+    age: 37,
+    gender: 'male',
+    favLanguage: 'JavaScript',
+    specialty: 'Front-end',
+    catchPhrase: `Don't forget the homies`
+});
+
+const bruna = new Instructor({
+    name: 'Bruna',
+    location: 'Budapest',
+    age: 25,
+    gender: 'female',
+    favLanguage: 'JavaScript',
+    specialty: 'Back-end',
+    catchPhrase: `Pop in and I'll show you`
+});
+
+const jonathan = new Student({
+    name: 'Jonas',
+    location: 'Locombia',
+    age: 28,
+    gender: 'male',
+    previousBackground: 'Entrepreneur',
+    className: 'WEB19',
+    favSubjects: ["HTML", "CSS", "Crypto"]
+});
+
+const elisa = new Student({
+    name: 'Elisa',
+    location: 'Spain',
+    age: 26,
+    gender: 'female',
+    previousBackground: 'Beauty Specialist',
+    className: 'WEB19',
+    favSubjects: ["HTML", "CSS", "Javascript"]
+});
+
+const sam = new ProjectManager({
+    name: 'Sam',
+    location: 'France',
+    age: 37,
+    gender: 'male',
+    favLanguage: 'JavaScript',
+    specialty: 'Front-end',
+    catchPhrase: `Je suis Sam`,
+    gradClassName: "WEB5",
+    favInstructor: "Josh"
+});
+
+const luna = new ProjectManager({
+    name: 'Luna',
+    location: 'Ukraine',
+    age: 30,
+    gender: 'female',
+    favLanguage: 'JavaScript',
+    specialty: 'Front-end',
+    catchPhrase: `Helloooo you beautiful people`,
+    gradClassName: "WEB4",
+    favInstructor: "Adam"
+});
